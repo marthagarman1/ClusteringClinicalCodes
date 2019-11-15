@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClinicalCodeClusteringWebApp</name>
+    </assembly>
+    <members>
+        <member name="F:ClinicalCodeClusteringWebApp.Controllers.HomeController.databaseconnection">
+            <summary>
+                Database connection.
+            </summary>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Controllers.HomeController.Index">
+            <summary>
+                Generates landing page.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Controllers.HomeController.Revenue">
+            <summary>
+                Generates Claim Revenue Chart if user is logged in.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Controllers.HomeController.Reports">
+            <summary>
+                Generates reports page if user is logged in.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Controllers.HomeController.About">
+            <summary>
+                Generates About Page.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Controllers.HomeController.Privacy">
+            <summary>
+                Generates Privacy Policy.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Controllers.HomeController.UploadFile(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+                Uploads CSV file to database.
+                Then call K-Means Analysis.
+                Redirects to cluster graph.
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Controllers.HomeController.Analytics(System.Double[][],System.Double[][],System.Int32[])">
+            <summary>
+                Takes in graph parameters, outputs scatter graph
+                and table of information, if user is logged in.
+            </summary>
+            <param name="data"></param>
+            <param name="centroids"></param>
+            <param name="series"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Controllers.HomeController.Error">
+            <summary>
+                Generates custom error: 404 page.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ClinicalCodeClusteringWebApp.Controllers.TestController.databaseconnection">
+            <summary>
+                Database connection.
+            </summary>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Controllers.TestController.Index">
+            <summary>
+                Generates landing page.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Controllers.TestController.Revenue">
+            <summary>
+                Generates Claim Revenue Chart if user is logged in.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Controllers.TestController.Reports">
+            <summary>
+                Generates reports page if user is logged in.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Controllers.TestController.About">
+            <summary>
+                Generates About Page.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Controllers.TestController.Privacy">
+            <summary>
+                Generates Privacy Policy.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Controllers.TestController.UploadFile(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+                Uploads CSV file to database.
+                Then call K-Means Analysis.
+                Redirects to cluster graph.
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Controllers.TestController.Analytics(System.Double[][],System.Double[][],System.Int32[])">
+            <summary>
+                Takes in graph parameters, outputs scatter graph
+                and table of information, if user is logged in.
+            </summary>
+            <param name="data"></param>
+            <param name="centroids"></param>
+            <param name="series"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Controllers.TestController.Error">
+            <summary>
+                Generates custom error: 404 page.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ClinicalCodeClusteringWebApp.Models.Algorithms.RunKMeans">
+            <summary>
+                Runs the K-Means Algorithms on dataset.
+            </summary>
+        </member>
+        <member name="F:ClinicalCodeClusteringWebApp.Models.Algorithms.RunKMeans.membership">
+            <summary>
+                Goal of this program is to return membership variable.
+            </summary>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Models.Algorithms.RunKMeans.#ctor(System.Int32,System.Double[][])">
+            <summary>
+                Controller.
+                Takes in dataset and intializes variables.
+            </summary>
+            <param name="dataset"></param>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Models.Algorithms.RunKMeans.KMeans">
+            <summary>
+                Controls the K-Means loop.
+            </summary>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Models.Algorithms.RunKMeans.InitializeCentroidMeans(System.Int32)">
+            <summary>
+                Randomly assign mean to centroids by assigning to random centroid
+            </summary>
+            <param name="k"></param>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Models.Algorithms.RunKMeans.UpdateMembership">
+            <summary>
+                Assigns membership to closest centroid
+            </summary>
+            <returns> returns true if any points change membership </returns>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Models.Algorithms.RunKMeans.TotalWithinSumofSquares">
+            <summary>
+                Total Variance Within Clusters Sum of Squares
+            </summary>
+            <param name="k"></param>
+            <returns> returns distortion calculation. </returns>
+        </member>
+        <member name="M:ClinicalCodeClusteringWebApp.Models.Algorithms.RunKMeans.Distance(System.Double[],System.Double[])">
+            <summary>
+                Euclidean Distance between two points.
+            </summary>
+            <param name="point1"></param>
+            <param name="centroid"></param>
+            <returns>returns sum of squared difference</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,64 @@
+﻿@model ClinicalCodeClusteringWebApp.Models.CPTCats
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>CptCats</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ClaimId" />
+            <div class="form-group">
+                <label asp-for="DrugAssay" class="control-label"></label>
+                <input asp-for="DrugAssay" class="form-control" />
+                <span asp-validation-for="DrugAssay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Microbiology" class="control-label"></label>
+                <input asp-for="Microbiology" class="form-control" />
+                <span asp-validation-for="Microbiology" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Chemistry" class="control-label"></label>
+                <input asp-for="Chemistry" class="form-control" />
+                <span asp-validation-for="Chemistry" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiseasePanels" class="control-label"></label>
+                <input asp-for="DiseasePanels" class="form-control" />
+                <span asp-validation-for="DiseasePanels" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hematology" class="control-label"></label>
+                <input asp-for="Hematology" class="form-control" />
+                <span asp-validation-for="Hematology" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Urinalysis" class="control-label"></label>
+                <input asp-for="Urinalysis" class="form-control" />
+                <span asp-validation-for="Urinalysis" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Immunology" class="control-label"></label>
+                <input asp-for="Immunology" class="form-control" />
+                <span asp-validation-for="Immunology" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

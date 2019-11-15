@@ -1,0 +1,342 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClinicalCodeWebApplication</name>
+    </assembly>
+    <members>
+        <member name="T:ClinicalCodeWebApplication.Controllers.ClaimsController">
+            <summary>
+            Handles all requests for claim data. 
+            </summary>
+        </member>
+        <member name="T:ClinicalCodeWebApplication.Controllers.CptCatsController">
+            <summary>
+            Handles requests for CPTCategory requests.
+            Updates database. 
+            </summary>
+        </member>
+        <member name="T:ClinicalCodeWebApplication.Controllers.HomeController">
+            <summary>
+            Controls Application Logic
+            </summary>
+        </member>
+        <member name="F:ClinicalCodeWebApplication.Controllers.HomeController._databaseconnection">
+            <summary>
+                Database connection.
+            </summary>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Controllers.HomeController.Index">
+            <summary>
+                Generates landing page.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Controllers.HomeController.Revenue">
+            <summary>
+                Generates Claim Revenue Chart if user is logged in.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Controllers.HomeController.Reports">
+            <summary>
+                Generates reports page if user is logged in.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Controllers.HomeController.About">
+            <summary>
+                Generates About Page.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Controllers.HomeController.Privacy">
+            <summary>
+                Generates Privacy Policy.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Controllers.HomeController.UploadFile(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+                Uploads CSV file to database.
+                Then call K-Means Analysis.
+                Redirects to cluster graph.
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Controllers.HomeController.Analytics(System.Double[][],System.Double[][],System.Int32[])">
+            <summary>
+                Takes in graph parameters, outputs scatter graph
+                and table of information, if user is logged in.
+            </summary>
+            <param name="data"></param>
+            <param name="centroids"></param>
+            <param name="membership"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Controllers.HomeController.Error">
+            <summary>
+                Generates custom error: 404 page.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ClinicalCodeWebApplication.Controllers.TestController.databaseconnection">
+            <summary>
+                Database connection.
+            </summary>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Controllers.TestController.Index">
+            <summary>
+                Generates landing page.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Controllers.TestController.Revenue">
+            <summary>
+                Generates Claim Revenue Chart if user is logged in.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Controllers.TestController.Reports">
+            <summary>
+                Generates reports page if user is logged in.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Controllers.TestController.About">
+            <summary>
+                Generates About Page.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Controllers.TestController.Privacy">
+            <summary>
+                Generates Privacy Policy.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Controllers.TestController.UploadFile(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+                Uploads CSV file to database.
+                Then call K-Means Analysis.
+                Redirects to cluster graph.
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Controllers.TestController.Analytics(System.Double[][],System.Double[][],System.Int32[])">
+            <summary>
+                Takes in graph parameters, outputs scatter graph
+                and table of information, if user is logged in.
+            </summary>
+            <param name="data"></param>
+            <param name="centroids"></param>
+            <param name="series"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Controllers.TestController.Error">
+            <summary>
+                Generates custom error: 404 page.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ClinicalCodeWebApplication.Models.Algorithms.DownloadFromDB">
+            <summary>
+            Pulls from CPTCats table in database to reduce
+            dimensions and return XY 2-dimensional table. 
+            </summary>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Models.Algorithms.DownloadFromDB.ParseDatabase">
+            <summary>
+            Parses data to Database
+            </summary>
+            <returns> Returns jagged array from datatable</returns>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Models.Algorithms.DownloadFromDB.ReduceDimensions(System.Double[][])">
+            <summary>
+            Reduces dimensions from database using Accord. 
+            </summary>
+            <param name="data"></param>
+            <returns> XY coordinates</returns>
+        </member>
+        <member name="T:ClinicalCodeWebApplication.Models.Algorithms.RunKMeans">
+            <summary>
+                Runs the K-Means Algorithms on dataset.
+            </summary>
+        </member>
+        <member name="F:ClinicalCodeWebApplication.Models.Algorithms.RunKMeans._iterations">
+            <summary>
+            Count the number of times the K-Means
+            loop runs. 
+            </summary>
+        </member>
+        <member name="F:ClinicalCodeWebApplication.Models.Algorithms.RunKMeans.Centroids">
+            <summary>
+            Returns coordinates of centroids. 
+            </summary>
+        </member>
+        <member name="F:ClinicalCodeWebApplication.Models.Algorithms.RunKMeans._dataset">
+            <summary>
+            XY coordinates of _dataset. 
+            </summary>
+        </member>
+        <member name="F:ClinicalCodeWebApplication.Models.Algorithms.RunKMeans._k">
+            <summary>
+            The number of clusters to find. 
+            </summary>
+        </member>
+        <member name="F:ClinicalCodeWebApplication.Models.Algorithms.RunKMeans.Membership">
+            <summary>
+                Goal of this program is to return membership variable.
+            </summary>
+        </member>
+        <member name="F:ClinicalCodeWebApplication.Models.Algorithms.RunKMeans.tss">
+            <summary>
+            Not used, future iteration with CH Index. 
+            </summary>
+        </member>
+        <member name="F:ClinicalCodeWebApplication.Models.Algorithms.RunKMeans._distortionScore">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Models.Algorithms.RunKMeans.#ctor(System.Int32,System.Double[][])">
+            <summary>
+                Controller.
+                Takes in dataset and intializes variables.
+            </summary>
+            <param name="dataset"></param>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Models.Algorithms.RunKMeans.KMeans">
+            <summary>
+                Controls the K-Means loop.
+            </summary>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Models.Algorithms.RunKMeans.InitializeCentroidMeans(System.Int32)">
+            <summary>
+                Randomly assign mean to centroids by assigning to random centroid
+            </summary>
+            <param name="k"></param>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Models.Algorithms.RunKMeans.UpdateMembership">
+            <summary>
+                Assigns membership to closest centroid
+            </summary>
+            <returns> returns true if any points change membership </returns>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Models.Algorithms.RunKMeans.TotalWithinSumofSquares">
+            <summary>
+                Total Variance Within Clusters Sum of Squares
+            </summary>
+            <param name="k"></param>
+            <returns> returns distortion calculation. </returns>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Models.Algorithms.RunKMeans.FindCentroidMeans">
+            <summary>
+             Calculates centroid means
+            sum of all associated datapoints / number of datapoints. 
+            </summary>
+            <returns>Returns true if centroids are not empty</returns>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Models.Algorithms.RunKMeans.Distance(System.Double[],System.Double[])">
+            <summary>
+                Euclidean Distance between two points.
+            </summary>
+            <param name="point1"></param>
+            <param name="centroid"></param>
+            <returns>returns sum of squared difference</returns>
+        </member>
+        <member name="T:ClinicalCodeWebApplication.Models.Algorithms.UploadToDb">
+            <summary>
+             Uploads File to Database. 
+            </summary>
+        </member>
+        <member name="F:ClinicalCodeWebApplication.Models.Algorithms.UploadToDb.Configuration">
+            <summary>
+            Needed for Database configuration. 
+            </summary>
+        </member>
+        <member name="M:ClinicalCodeWebApplication.Models.Algorithms.UploadToDb.Upload(System.String)">
+            <summary>
+             Uploads selected file to Claim table and generates
+             new aggregated table in CPT_Cats. 
+            </summary>
+        </member>
+        <member name="T:ClinicalCodeWebApplication.Models.DatabaseModels.Claims">
+            <summary>
+            Claim Table containing uploaded data. 
+            </summary>
+        </member>
+        <member name="P:ClinicalCodeWebApplication.Models.DatabaseModels.Claims.ClaimId">
+            <summary>
+            ClaimID, every claim can have multiple CPT codes. 
+            </summary>
+        </member>
+        <member name="P:ClinicalCodeWebApplication.Models.DatabaseModels.Claims.Cpt">
+            <summary>
+            CPT Codes, there can be multiple Cpt codes on each claim. 
+            </summary>
+        </member>
+        <member name="P:ClinicalCodeWebApplication.Models.DatabaseModels.Claims.ChargeAmount">
+            <summary>
+            Amount charged for test. 
+            </summary>
+        </member>
+        <member name="P:ClinicalCodeWebApplication.Models.DatabaseModels.Claims.PaymentAmount">
+            <summary>
+            Amount if any paid by insurance. 
+            </summary>
+        </member>
+        <member name="P:ClinicalCodeWebApplication.Models.DatabaseModels.Claims.DateOfSubmission">
+            <summary>
+            Date claim was submitted. 
+            </summary>
+        </member>
+        <member name="T:ClinicalCodeWebApplication.Models.DatabaseModels.CptCats">
+            <summary>
+            Contains the counts of each category on each
+            submitted claim. 
+            </summary>
+        </member>
+        <member name="P:ClinicalCodeWebApplication.Models.DatabaseModels.CptCats.ClaimId">
+            <summary>
+            Primary Key identifying patient visit. 
+            </summary>
+        </member>
+        <member name="P:ClinicalCodeWebApplication.Models.DatabaseModels.CptCats.DrugAssay">
+            <summary>
+            Drug Assay Tests. 
+            </summary>
+        </member>
+        <member name="P:ClinicalCodeWebApplication.Models.DatabaseModels.CptCats.Microbiology">
+            <summary>
+            Microbiology Tests. 
+            </summary>
+        </member>
+        <member name="P:ClinicalCodeWebApplication.Models.DatabaseModels.CptCats.Chemistry">
+            <summary>
+            Chemistry Tests. 
+            </summary>
+        </member>
+        <member name="P:ClinicalCodeWebApplication.Models.DatabaseModels.CptCats.DiseasePanels">
+            <summary>
+            Disease Panels. 
+            </summary>
+        </member>
+        <member name="P:ClinicalCodeWebApplication.Models.DatabaseModels.CptCats.Hematology">
+            <summary>
+            Hematology Tests. 
+            </summary>
+        </member>
+        <member name="P:ClinicalCodeWebApplication.Models.DatabaseModels.CptCats.Immunology">
+            <summary>
+            Immunology Tests. 
+            </summary>
+        </member>
+        <member name="P:ClinicalCodeWebApplication.Models.DatabaseModels.CptCats.Urinalysis">
+            <summary>
+            Urinalysis Tests. 
+            </summary>
+        </member>
+    </members>
+</doc>

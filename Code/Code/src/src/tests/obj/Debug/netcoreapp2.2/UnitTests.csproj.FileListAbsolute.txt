@@ -1,0 +1,3 @@
+C:\Users\mgar2668\Desktop\KMeanClusteringWithPCA\KMeanClusteringWithPCA\UnitTests\obj\Debug\netcoreapp2.2\UnitTests.csproj.CoreCompileInputs.cache
+C:\Users\mgar2668\Desktop\KMeanClusteringWithPCA\KMeanClusteringWithPCA\UnitTests\obj\Debug\netcoreapp2.2\UnitTests.AssemblyInfoInputs.cache
+C:\Users\mgar2668\Desktop\KMeanClusteringWithPCA\KMeanClusteringWithPCA\UnitTests\obj\Debug\netcoreapp2.2\UnitTests.AssemblyInfo.cs
